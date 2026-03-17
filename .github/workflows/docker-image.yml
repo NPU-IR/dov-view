@@ -1,0 +1,39 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Log in to Docker Hub
+      if: github.event_name == 'push'
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Set date tag
+      id: date
+      run: echo "tag=$(date +%Y%m%d)" >> $GITHUB_OUTPUT
+
+    - name: Build the Docker image
+      run: |
+        docker build . --file Dockerfile \
+          --tag huchengbei/ascendnpu-ir-doc-view:${{ steps.date.outputs.tag }} \
+          --tag huchengbei/ascendnpu-ir-doc-view:latest
+
+    - name: Push the Docker image
+      if: github.event_name == 'push'
+      run: |
+        docker push huchengbei/ascendnpu-ir-doc-view:${{ steps.date.outputs.tag }}
+        docker push huchengbei/ascendnpu-ir-doc-view:latest
