@@ -349,6 +349,10 @@ FRONTEND_HTML = """<!DOCTYPE html>
             padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
   .header h1 { font-size: 18px; font-weight: 600; }
   .header span { color: #8b949e; font-size: 14px; }
+  .header-links { margin-left: auto; display: flex; gap: 12px; }
+  .header-links a { color: #8b949e; font-size: 13px; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 5px; }
+  .header-links a:hover { color: #58a6ff; }
   .main { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
   .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px;
           padding: 24px; margin-bottom: 24px; }
@@ -397,6 +401,16 @@ FRONTEND_HTML = """<!DOCTYPE html>
 <div class="header">
   <h1>AscendNPU-IR Doc Preview</h1>
   <span>输入 PR 号或 commit SHA 构建并预览 Sphinx 文档</span>
+  <div class="header-links">
+    <a href="https://gitcode.com/Ascend/AscendNPU-IR" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8Z"/></svg>
+      AscendNPU-IR
+    </a>
+    <a href="https://gitcode.com/NPU-IR/doc-preview" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8Z"/></svg>
+      doc-preview
+    </a>
+  </div>
 </div>
 <div class="main">
   <div class="card">
