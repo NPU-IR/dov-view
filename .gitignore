@@ -1,0 +1,13 @@
+# Built documentation
+builds/
+
+# Cloned source repo
+AscendNPU-IR/
+
+# Claude Code local config
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

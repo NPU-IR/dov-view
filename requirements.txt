@@ -1,0 +1,13 @@
+# Web service
+fastapi
+uvicorn[standard]
+aiofiles
+
+# Sphinx doc build (from AscendNPU-IR/docs/requirements.txt)
+furo
+myst-parser
+pydata-sphinx-theme
+shibuya
+Sphinx
+sphinx-rtd-theme
+nvidia-sphinx-theme
